@@ -2,7 +2,7 @@ const five = require('johnny-five');
 const schedule = require('node-schedule');
 
 const board = new five.Board();
-const thermoPin = new five.Pin(2);
+let thermoPin;
 
 const onCronString = '10 * * * * *';
 const offCronString = '20 * * * * *';
@@ -16,7 +16,8 @@ const offJobBuilder = () => {
 }
 
 board.on('ready', () => {
-  thermoPin.off();
+  thermoPin = new five.Pin(2);
+  thermoPin.low();
   onJobBuilder();
   offJobBuilder();
 });

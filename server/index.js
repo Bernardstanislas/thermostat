@@ -4,8 +4,8 @@ const schedule = require('node-schedule');
 const board = new five.Board();
 let thermoPin;
 
-const onCronString = '10 * * * * *';
-const offCronString = '20 * * * * *';
+const onCronString = '0 0 18 * * 1-5';
+const offCronString = '0 0 8 * * 1-5';
 
 const onJobBuilder = () => {
   return schedule.scheduleJob(onCronString, () => thermoPin.high());
@@ -17,7 +17,7 @@ const offJobBuilder = () => {
 
 board.on('ready', () => {
   thermoPin = new five.Pin(2);
-  thermoPin.low();
+  thermoPin.high();
   onJobBuilder();
   offJobBuilder();
 });

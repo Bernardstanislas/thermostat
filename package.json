@@ -1,0 +1,30 @@
+{
+  "name": "thermostat",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bernardstanislas/thermostat.git"
+  },
+  "keywords": [
+    "thermostat",
+    "raspberry",
+    "pi",
+    "arduino",
+    "iot"
+  ],
+  "author": "bernardstanislas@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Bernardstanislas/thermostat/issues"
+  },
+  "homepage": "https://github.com/Bernardstanislas/thermostat#readme",
+  "dependencies": {
+    "johnny-five": "0.10.6",
+    "node-schedule": "1.2.0"
+  }
+}
